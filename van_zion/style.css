@@ -98,7 +98,7 @@ body {
 
 @media screen and (max-width: 800px) {
 .col-md-4 {
-  border: solid;;
+  border-top: solid;;
   border-color: #eeeeee;
   margin-top: 20px;
   padding-top: 10px;
