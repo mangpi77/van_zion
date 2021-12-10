@@ -31,11 +31,11 @@
   <div class="container mx-auto">
     <div class="row">
       <div class="col-md-8 mx-auto border-primaryrounded">
-        <form action="details.php" method="post" class="rounded-left = .50rem">
-          <div class="input-group mt-3">
-            <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-primary" placeholder="Search..." autocomplete="on" required>
+        <form action="details.php" method="post" class="">
+          <div class="input-group textbox-rounded mt-3">
+            <input type="text" name="search" id="search" class="form-control form-control-md textbox-rounded border-primary" placeholder="Search..." autocomplete="on" required>
             <div class="input-group-append">
-              <input type="submit" name="submit" value="Search" class="btn btn-primary rounded-right = .50rem;">
+              <input type="submit" name="submit" value="Search" class="btn btn-primary textbox-rounded">
             </div>
           </div>
         </form>

@@ -90,11 +90,13 @@ body {
 
 }
 
-.btn{
-  float: left;
+#search{
+  padding-top: -10px;
 }
 
-
+.textbox-rounded {
+border-radius: 1rem;
+}
 
 @media screen and (max-width: 800px) {
 .col-md-4 {
