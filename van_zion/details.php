@@ -21,28 +21,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Details</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
-<body>
-
-
-
-<div class="container bg-light">
-    <div class="row bg-light">
-      <div class="col-md-8 mx-auto bg-light rounded p-4">
-        <h5 class="text-center font-weight-bold">Lai Hlabu</h5>
-        <hr class="my-1">
-        <h5 class="text-center text-secondary">A hnai ah hla hmin ngan aw la hawl aw</h5>
-        <form action="details.php" method="post" class="p-3">
-          <div class="input-group">
-            <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-primary" placeholder="Search..." autocomplete="off" required>
+<body class="bg-primary mx-auto">
+  <div class="container mx-auto">
+    <div class="row">
+      <div class="col-md-8 mx-auto border-primaryrounded">
+        <form action="details.php" method="post" class="pb-3">
+          <div class="input-group mt-3">
+            <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-primary" placeholder="Search..." autocomplete="on" required>
             <div class="input-group-append">
               <input type="submit" name="submit" value="Search" class="btn btn-primary rounded-right = .25rem;">
             </div>
           </div>
         </form>
       </div>
-      <div class="col-md-6" style="position: relative;margin-top: -38px;margin-left: 215px;">
+      </div>
+     
         <div class="list-group" id="show-list">
           <!-- Here autocomplete list will be display -->
         </div>
@@ -52,26 +51,44 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="script.js"></script>
 
+<!----- print clean file ------>
+<script>
+function printContent(el){
+var restorepage = $('body').html();
+var printcontent = $('#' + el).clone();
+$('body').empty().html(printcontent);
+window.print();
+$('body').html(restorepage);
+}
+</script>
+<!----------------------------->
 
-
-
-
-  <div class="container"> 
-  <div class="row border border-primary">
-  <div class="col-8 border border-primary">
-     <h1 span class="border border-primary"><?= $row['title']?></h1>
+ <div class="container mx-auto"> 
+<div class="row text-left">
+  <div class="col-8 mx-auto">
+    <div id = "print">
+     <h1 span ><?= $row['title']?></h1>
      <?= nl2br(htmlentities($row['lyrics']))?>
-     
+   </div>
   </div>
-
-  <div class="col-4 border border-primary">
-
-      <h5><b>Title :</b> <?= $row['title'] ?></h4>
+  <div class="col-md-4">
+    <h5><b>Title :</b> <?= $row['title'] ?></h4>
       <h5><b>Master key :</b> <?= strtoupper($row['chord']) ?></h4>
       <h5><b>Hla Number: </b> <?= $row['number']?></h4>
-      <h5><b>Download :</b><a href='uploads/<?=$row['image_url']?>'> <img src="uploads/pdf.png" alt="" width="70" height="70"></a></h4>
+      <h5><b>Download :</b>
+      <br>
+      <span class = "social_logo">
 
-    </div>
+      <a href='uploads/<?=$row['image_url']?>'> <img src="uploads/pdf_logo.png" alt="" width="40" height="40"></a>
+      <a href='uploads/<?=$row['image_url']?>'> <img src="uploads/ppt_logo.png" alt="" width="40" height="40"></a>
+      <a href='uploads/<?=$row['image_url']?>'> <img src="uploads/propresenter_logo.png" alt="" width="60" height="40"></a>
+      </span>
+      <br>
+      <br>
+      <br><button type="button" class="btn btn-primary" onclick="printContent('print');">Print</button>
   </div>
-</div> 
+</div>
+</div>
+
+</body>
 </html>

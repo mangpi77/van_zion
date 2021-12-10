@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
 
 </head>
-
 <body class="bg-primary">
   <div class="container">
     <div class="row mt-4">
@@ -19,12 +18,13 @@
         <h5 class="text-center text-secondary">A hnai ah hla hmin ngan aw la hawl aw</h5>
         <form action="details.php" method="post" class="p-3">
           <div class="input-group">
-            <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-primary" placeholder="Search..." autocomplete="off" required>
+            <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-primary" placeholder="Search..." autocomplete="on" required>
             <div class="input-group-append">
               <input type="submit" name="submit" value="Search" class="btn btn-primary rounded-right = .25rem;">
             </div>
           </div>
         </form>
+      </div>
       </div>
       <div class="col-md-6" style="position: relative;margin-top: -38px;margin-left: 215px;">
         <div class="list-group" id="show-list">
@@ -36,5 +36,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>
