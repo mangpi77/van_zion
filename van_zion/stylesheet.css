@@ -1,0 +1,175 @@
+/*! `Custom` Bootstrap 5 theme */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700);
+$headings-font-family:Montserrat;
+
+$enable-grid-classes:false;
+$primary:#083358;
+$secondary:#F67280;
+$success:#0074E4;
+$danger:#FF4057;
+$info:#74DBEF;
+$warning:#FC3C3C;
+$light:#F2F2F0;
+$dark:#072247;
+$enable-gradients:true;
+$spacer:1rem;
+$border-width:1px;
+
+@import "bootstrap";
+
+// Add SASS theme customizations here..
+
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size:16px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--clr-gray);
+}
+
+.bodyText{
+ font-size:12px;
+ font-weight: 700;
+   
+}
+
+.titleText{
+ padding-top:20px;
+ font-size: 16px;
+ font-weight: 600;
+}
+
+.wrapper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 0rem);
+  justify-content: center;
+  background-color:white;
+}
+
+.container {
+  overflow: hidden;
+  box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+  text-align: left;
+  position: relative;
+}
+
+.footer {
+  box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+  text-align: left;
+  position: relative;
+  background-color:red;
+  width:100%;
+  margin-top:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:20px;
+
+}
+
+.navbar{
+    width:100%;
+}
+
+.social_logo{
+  float: left;
+  padding: 10px 0 10px 0;
+  align-items: center;
+  filter: brightness(0) invert(1);
+}
+
+.col-8{
+
+  margin-left: auto;
+}
+
+.col-md-4{
+  background-color:white;
+  border-left:solid;
+  border-color:#eeeeee;
+  margin-top:20px;
+}
+
+
+.row{
+  background-color:white;
+}
+
+.btn{
+  z-index: 999;
+}
+#search{
+  padding-top: -10px;
+}
+
+.navbar{
+    background-colr:red;
+}
+.textbox-rounded {
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size:16px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.col-md-4 {
+  border-top: solid;
+  border-left:none;
+  border-color: #eeeeee;
+  padding-top: 20px;
+}
+
+.col-8{
+  margin:0;
+  padding-bottom:20px;
+}
+
+
+
+.social_logo{
+  float: left;
+  padding: 5px 0 5px 0;
+  margin-bottom: 10px;
+  align-items: center;
+  filter: brightness(0) invert(1);
+}
+
+.img{
+    filter: brightness(0) invert(1);
+}
+.invert ul li a {
+  filter: brightness(0) invert(1);
+}
+
+.btn{
+  z-index: 999;
+}
+
+.wrapper-grid {
+  padding:0;
+  margin:0;
+}
+
+.row{
+  padding:0;
+  margin:0;
+}
+
+
+}

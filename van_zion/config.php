@@ -1,11 +1,8 @@
-
 <?php
-
-//database crendentials
-  const DBHOST = 'localhost';        // Database Hostname
-  const DBUSER = 'root';             // MySQL Username
-  const DBPASS = '';                 // MySQL Password
-  const DBNAME = 'songbook';  // MySQL Database name
+  const DBHOST = '162.241.217.237';        // Database Hostname
+  const DBUSER = 'cbanaus_user';             // MySQL Username
+  const DBPASS = 'WH8M0~5AGIEP';                 // MySQL Password
+  const DBNAME = 'cbanaus_songbook';  // MySQL Database name
 
   // Data Source Network
   $dsn = 'mysql:host=' . DBHOST . ';dbname=' . DBNAME . '';
