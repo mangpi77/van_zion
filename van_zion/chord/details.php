@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config.php';
 
 
 if (isset($_POST['submit'])) {
@@ -33,8 +33,8 @@ if (isset($_POST['submit'])) {
   <title>Details</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="stylesheet.css">
-  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="../stylesheet.css">
+  <link rel="stylesheet" href="../theme.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i">
   <script src="bootstrap/scripts/jquery.min.js"></script>
   <script src="/bootstrap/js/bootstrap.min.js"></script>
@@ -60,11 +60,8 @@ if (isset($_POST['submit'])) {
   <!----- print clean file ------>
   <script>
     function printContent(el) {
-      var restorepage = $('body').html();
-      var printcontent = $('#' + el).clone();
-      $('body').empty().html(printcontent);
       window.print();
-      $('body').html(restorepage);
+    
     }
   </script>
   <!----------------------------->
@@ -113,20 +110,20 @@ if (isset($_POST['submit'])) {
 
 <!-- sayem start -->
         <?php
-        require_once 'ChordPro/GuessKey.php';
-        $guess = new ChordPro\GuessKey();
+      //  require_once 'ChordPro/GuessKey.php';
+      /*  $guess = new ChordPro\GuessKey();
         $key = $guess->guessKey($song);
         $key2 = $guess->$scales;
-
-        echo $key2;
+*/
+      ///  echo $key2;
         ?>
 
 
 
         <!-- <select name="ch" class="ch">
-                <?php foreach ($key as $k => $v) {
+                <?php/* foreach ($key as $k => $v) {
                   echo "<option value='" . $k . "'>" . $v . "</option>";
-                } ?>
+                }*/ ?>
         </select>  -->
 
 <!-- sayem end -->
@@ -166,10 +163,10 @@ if (isset($_POST['submit'])) {
 </select>
 <button type="submit">Select</button> -->
 
-        <h1>HTML</h1>
-        <?php echo $txt_html;
+   <!--     <h1>HTML</h1>
+        <?php // echo $txt_html;
         ?>
-        <h1>Plain text</h1>
+        <h1>Plain text</h1>-->
 
         <!-- sayem Add CSS -->
         <link rel="stylesheet" type="text/css" href="jquery.transposer.css" />
@@ -205,9 +202,9 @@ if (isset($_POST['submit'])) {
                     </br>
                     <p class="card-text"><strong>Download :</strong></p>
                     <span class="social_logo">
-                      <button type="button" class="btn btn-light px-1"><a href='uploads/<?= $row['pdf'] ?>'> <img src="uploads/icons/file-earmark-pdf.svg" alt="" width="40" height="40"></a>PDF</button>
-                      <button type="button" class="btn btn-light px-1"><a href='uploads/<?= $row['ppt'] ?>'> <img src="uploads/icons/file-earmark-ppt.svg" alt="" width="40" height="40"></a>PPT</button>
-                      <button type="button" class="btn btn-light px-1"><a href='uploads/<?= $row['pro'] ?>'> <img src="uploads/icons/file-earmark-play.svg" alt="" width="40" height="40"></a>PRO</button>
+                      <button type="button" class="btn btn-light px-1"><a href='../uploads/<?= $row['pdf'] ?>'> <img src="../uploads/icons/file-earmark-pdf.svg" alt="" width="40" height="40"></a>PDF</button>
+                      <button type="button" class="btn btn-light px-1"><a href='../uploads/<?= $row['ppt'] ?>'> <img src="../uploads/icons/file-earmark-ppt.svg" alt="" width="40" height="40"></a>PPT</button>
+                      <button type="button" class="btn btn-light px-1"><a href='../uploads/<?= $row['pro'] ?>'> <img src="../uploads/icons/file-earmark-play.svg" alt="" width="40" height="40"></a>PRO</button>
                     </span>
                     <br>
                     <br>
@@ -220,7 +217,7 @@ if (isset($_POST['submit'])) {
             </div>
           </div>
         </div>
-        <div class="footer bg-light"><img src="uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
+        <div class="footer bg-light"><img src="../uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
       </div>
 
 

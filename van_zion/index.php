@@ -21,7 +21,7 @@
         <h5 class="text-center font-weight-bold">Lai Hlabu</h5>
         <hr class="my-1">
         <h5 class="text-center text-dark">A hnuai ah hla hmin ngan aw la hawl aw</h5>
-        <form action="details.php" method="post" class="p-3">
+        <form action="chord/details.php" method="post" class="p-3">
           <div class="input-group">
             <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-primary width =250px;" placeholder="Search..." autocomplete="off" required>
             <div class="input-group-append">
@@ -30,7 +30,7 @@
           </div>
         </form>
       </div>
-      <div class="col-md-6" style="position: relative;margin-top: -38px;margin-left: 215px;">
+      <div class="col-8 mx-auto" style="position: relative;margin-top: -38px;margin-left: 215px;">
         <div class="list-group" id="show-list">
           <!-- Here autocomplete list will be display -->
         </div>
