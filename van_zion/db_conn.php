@@ -1,8 +1,8 @@
 <?php  
 
-$sname = "ds";
-$uname = "mangpi77";
-$password = "0b6821eec0d930cd8367a0e50b6e8b46";
+$sname = "localhost";
+$uname = "root";
+$password = "root";
 
 $db_name = "cbanaus_songbook";
 

@@ -13,12 +13,7 @@ if (isset($_POST['submit'])) {
   header('location: .');
   exit();
 }
-
-
 ?>
-
-
-
 </select>
 
 
@@ -59,10 +54,22 @@ if (isset($_POST['submit'])) {
 
   <!----- print clean file ------>
   <script>
+
     function printContent(el) {
       window.print();
     
     }
+
+    function toggleCheck(e) {
+    if(document.getElementById("myCheckbox").checked === true){
+    $(".c").show()
+       $("."+e).show()
+    } else {
+        $(".c").hide()
+        $("."+e).hide()
+    }
+}
+	
   </script>
   <!----------------------------->
 
@@ -95,8 +102,6 @@ if (isset($_POST['submit'])) {
             </div>
           </form>
       </nav>
-
-
 
 
       <div class="container mx-auto">
@@ -178,6 +183,12 @@ if (isset($_POST['submit'])) {
 
         <div>Original Key: <?= ucfirst($row['chord']) ?></div><br>
 
+       <div style="font-size:13px"> Hide/Show Keys
+<label class="switch">
+  <input type="checkbox" id="myCheckbox" onchange="toggleCheck('transpose-keys')" checked>
+  <span class="slider round"></span>
+</label></div>
+
         <pre data-key=<?= ucfirst($row['chord']) ?> id="pre">
               <?= ucfirst($row['lyrics']) ?>
         </pre>
@@ -209,7 +220,8 @@ if (isset($_POST['submit'])) {
                     <br>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-light" onClick="printContent('print');">Print</button>
+                    <button type="button" class="btn btn-light"  onClick="printContent('print');">Print</button>
+                    
                   </div>
                 </div>
               </div>

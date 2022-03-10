@@ -131,6 +131,41 @@ if (isset($_POST['submit'])) {
 
 <!-- sayem end -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <form action = "https://cbana.us/songbook/details.php" method = "post">
+<select id="select" name="key_select">
+<option value ="Fb">Fb</option>
+<option value ="Cb">Cb</option>
+<option value ="Gb">Gb</option>
+<option value ="Db">Db</option>
+<option value ="Ab">Ab</option>
+<option value ="Eb">Eb</option>
+<option value ="6">Bb</option>
+<option value ="7">F</option>
+<option value ="8">C</option>
+<option value ="9">G</option>
+<option value ="10">D</option>
+<option value ="11">A</option>
+<option value ="12">E</option>
+<option value ="13">C</option>
+<option value ="14">F#</option>
+<option value ="15">C#</option>
+<option value ="16">G#</option>
+</select>
+<button type="submit">Select</button> -->
+
         <h1>HTML</h1>
         <?php echo $txt_html;
         ?>
