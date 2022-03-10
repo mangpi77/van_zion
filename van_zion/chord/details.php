@@ -3,18 +3,42 @@ require_once '../config.php';
 
 
 if (isset($_POST['submit'])) {
+
   $title = $_POST['search'];
 
   $sql = 'SELECT * FROM song WHERE title = :title';
   $stmt = $conn->prepare($sql);
   $stmt->execute(['title' => $title]);
   $row = $stmt->fetch();
+
 } else {
   header('location: .');
+
   exit();
+ 
 }
 ?>
-</select>
+
+
+  <!----- print clean file ------>
+  <script>
+
+    function printContent(el) {
+      window.print();
+    
+    }
+
+    function toggleCheck(e) {
+    if(document.getElementById("myCheckbox").checked === true){
+    $(".c").show()
+       $("."+e).show()
+    } else {
+        $(".c").hide()
+        $("."+e).hide()
+    }
+}
+  </script>
+  <!----------------------------->
 
 
 
@@ -50,28 +74,6 @@ if (isset($_POST['submit'])) {
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-  <!----- print clean file ------>
-  <script>
-
-    function printContent(el) {
-      window.print();
-    
-    }
-
-    function toggleCheck(e) {
-    if(document.getElementById("myCheckbox").checked === true){
-    $(".c").show()
-       $("."+e).show()
-    } else {
-        $(".c").hide()
-        $("."+e).hide()
-    }
-}
-	
-  </script>
-  <!----------------------------->
 
   <div class="container mx-auto">
     <div class="row text-left">
@@ -111,63 +113,6 @@ if (isset($_POST['submit'])) {
       </div>
       <div class="col-8 mx-auto">
 
-
-
-<!-- sayem start -->
-        <?php
-      //  require_once 'ChordPro/GuessKey.php';
-      /*  $guess = new ChordPro\GuessKey();
-        $key = $guess->guessKey($song);
-        $key2 = $guess->$scales;
-*/
-      ///  echo $key2;
-        ?>
-
-
-
-        <!-- <select name="ch" class="ch">
-                <?php/* foreach ($key as $k => $v) {
-                  echo "<option value='" . $k . "'>" . $v . "</option>";
-                }*/ ?>
-        </select>  -->
-
-<!-- sayem end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <form action = "https://cbana.us/songbook/details.php" method = "post">
-<select id="select" name="key_select">
-<option value ="Fb">Fb</option>
-<option value ="Cb">Cb</option>
-<option value ="Gb">Gb</option>
-<option value ="Db">Db</option>
-<option value ="Ab">Ab</option>
-<option value ="Eb">Eb</option>
-<option value ="6">Bb</option>
-<option value ="7">F</option>
-<option value ="8">C</option>
-<option value ="9">G</option>
-<option value ="10">D</option>
-<option value ="11">A</option>
-<option value ="12">E</option>
-<option value ="13">C</option>
-<option value ="14">F#</option>
-<option value ="15">C#</option>
-<option value ="16">G#</option>
-</select>
-<button type="submit">Select</button> -->
-
    <!--     <h1>HTML</h1>
         <?php // echo $txt_html;
         ?>
@@ -178,29 +123,26 @@ if (isset($_POST['submit'])) {
         <div class="titleText"><?= ucwords($row['title']) ?></div>
 
 
-<!-- sayem start -->
 
 
+    <?php if (count($row) == 1) { ?>
+      <div class="myotherdiv">Sorry, Na hawl mi hla a um hrih lo.</div>
+    <?php } else { ?>
+        <!-- sayem start -->
         <div>Original Key: <?= ucfirst($row['chord']) ?></div><br>
 
-       <div style="font-size:13px"> Hide/Show Keys
-<label class="switch">
-  <input type="checkbox" id="myCheckbox" onchange="toggleCheck('transpose-keys')" checked>
-  <span class="slider round"></span>
-</label></div>
+        <div style="font-size:13px"> Hide/Show Keys
+        <label class="switch">
+        <input type="checkbox" id="myCheckbox" onchange="toggleCheck('transpose-keys')" checked>
+        <span class="slider round"></span>
+        </label></div>
 
         <pre data-key=<?= ucfirst($row['chord']) ?> id="pre">
               <?= ucfirst($row['lyrics']) ?>
         </pre>
-        
-        
-<!-- sayem end -->
 
-
-
-      </div>
-
-
+        <!-- sayem end -->
+        </div>
         <div class="col-md-4">
           <div class="card text-white bg-primary mb-3" style="max-width: auto;">
             <div class="card-header">Summary</div>
@@ -230,19 +172,16 @@ if (isset($_POST['submit'])) {
           </div>
         </div>
         <div class="footer bg-light"><img src="../uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
-      </div>
+        </div>
 
-
-    
-<!-- sayem Add JS -->
-
-      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-      <script type="text/javascript" src="jquery.transposer.js"></script>
-      <script type="text/javascript">
+        <!-- sayem Add JS -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.transposer.js"></script>
+        <script type="text/javascript">
         $(function() {
           $("pre").transpose();
         });
-      </script>
-</body>
-
+        </script>
+        <?php } ?>
+  </body>
 </html>
