@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
   //$sql = 'SELECT id, title FROM song ORDER BY title ASC;';
   $sql = "SELECT id, title, chord FROM song Where title like 'A%'";
   $stmt = $conn->prepare($sql);
-  $stmt->execute(['title' => $title], ['chord' => $chord] );
+  $stmt->execute(['title' => $title]);
   
   // fetch all rows
   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
