@@ -1,31 +1,23 @@
 <?php
 require_once '../config.php';
+if (isset($_POST['submit'])) {
+  $title = $_POST['search'];
+  $sql = 'SELECT * FROM song WHERE title = :title';
+  $stmt = $conn->prepare($sql);
+  $stmt->execute(['title' => $title]);
+  $row = $stmt->fetch();
 
-if(isset($_POST['submit']) OR isset($_GET['id'])){
-
-    $condition = "";
-    $value = "";
-    if(isset($_GET['id']) and !empty($_GET['id'])){
-        $condition = "id = :value";
-        $value = $_GET['id'];
-    }
-    else if(isset($_POST['submit']) and !empty($_POST['submit'])){
-        $condition = "title = :value";
-        $value = $_POST['submit'];
-    }
-    
-    $sql = 'SELECT * FROM song WHERE ' . $condition;
-    $stmt = $conn->prepare($sql);
-    $stmt->execute(['value' => $value]);
-    $row = $stmt->fetch();
-
-
-}else{
-    header('location: .');
-    exit();
+} elseif (!empty($_REQUEST['id'])) {
+  $sql = 'SELECT * FROM song WHERE id = :id';
+  $stmt = $conn->prepare($sql);
+  $stmt->execute(['id' => $_REQUEST['id']]);
+  $row = $stmt->fetch();
+} else {
+  header('location: .');
+  exit();
 }
-
 ?>
+
 
 <?php
   require_once '../config.php';
