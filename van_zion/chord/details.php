@@ -22,9 +22,10 @@ if (isset($_POST['submit'])) {
 <?php
   require_once '../config.php';
   //$sql = 'SELECT id, title FROM song ORDER BY title ASC;';
-  $sql = "SELECT id, title FROM song WHere title like 'A%'";
+  $sql = "SELECT id, title, chord FROM song Where title like 'A%'";
   $stmt = $conn->prepare($sql);
-  $stmt->execute(['title' => $title]);
+  $stmt->execute(['title' => $title], ['chord' => $chord] );
+  
   // fetch all rows
   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -35,158 +36,158 @@ if(isset($_POST['select1'])){
     $select1 = $_POST['select1'];
     switch ($select1) {
         case 'value1':
-          $sql = "SELECT id, title FROM song WHere title like 'A%'";
+          $sql = "SELECT id, title, chord FROM song WHere title like 'A%'";
           $stmt = $conn->prepare($sql);
           $stmt->execute(['title' => $title]);
           $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
           break;
         case 'value2':
-          $sql = "SELECT id, title FROM song WHere title like 'B%'";
+          $sql = "SELECT id, title, chord FROM song WHere title like 'B%'";
           $stmt = $conn->prepare($sql);
           $stmt->execute(['title' => $title]);
           $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
           break;
         case 'value3':
-            $sql = "SELECT id, title FROM song WHere title like 'C%'";
+            $sql = "SELECT id, title, chord  FROM song WHere title like 'C%'";
             $stmt = $conn->prepare($sql);
             $stmt->execute(['title' => $title]);
             $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
             break;
         case 'value4':
-            $sql = "SELECT id, title FROM song WHere title like 'D%'";
+            $sql = "SELECT id, title, chord  FROM song WHere title like 'D%'";
             $stmt = $conn->prepare($sql);
             $stmt->execute(['title' => $title]);
             $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
             break; 
          case 'value5':
-          $sql = "SELECT id, title FROM song WHere title like 'E%'";
+          $sql = "SELECT id, title, chord  FROM song WHere title like 'E%'";
           $stmt = $conn->prepare($sql);
           $stmt->execute(['title' => $title]);
           $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
           break;
         case 'value6':
-          $sql = "SELECT id, title FROM song WHere title like 'F%'";
+          $sql = "SELECT id, title, chord  FROM song WHere title like 'F%'";
           $stmt = $conn->prepare($sql);
           $stmt->execute(['title' => $title]);
           $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
           break;
         case 'value7':
-            $sql = "SELECT id, title FROM song WHere title like 'G%'";
+            $sql = "SELECT id, title, chord  FROM song WHere title like 'G%'";
             $stmt = $conn->prepare($sql);
             $stmt->execute(['title' => $title]);
             $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
             break;
         case 'value8':
-            $sql = "SELECT id, title FROM song WHere title like 'H%'";
+            $sql = "SELECT id, title, chord  FROM song WHere title like 'H%'";
             $stmt = $conn->prepare($sql);
             $stmt->execute(['title' => $title]);
             $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
             break;             
             
             case 'value9':
-              $sql = "SELECT id, title FROM song WHere title like 'I%'";
+              $sql = "SELECT id, title, chord  FROM song WHere title like 'I%'";
               $stmt = $conn->prepare($sql);
               $stmt->execute(['title' => $title]);
               $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
               break;
             case 'value10':
-              $sql = "SELECT id, title FROM song WHere title like 'J%'";
+              $sql = "SELECT id, title, chord  FROM song WHere title like 'J%'";
               $stmt = $conn->prepare($sql);
               $stmt->execute(['title' => $title]);
               $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
               break;
             case 'value11':
-                $sql = "SELECT id, title FROM song WHere title like 'K%'";
+                $sql = "SELECT id, title, chord  FROM song WHere title like 'K%'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute(['title' => $title]);
                 $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 break;
             case 'value12':
-                $sql = "SELECT id, title FROM song WHere title like 'L%'";
+                $sql = "SELECT id, title, chord  FROM song WHere title like 'L%'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute(['title' => $title]);
                 $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 break; 
              case 'value13':
-              $sql = "SELECT id, title FROM song WHere title like 'M%'";
+              $sql = "SELECT id, title, chord  FROM song WHere title like 'M%'";
               $stmt = $conn->prepare($sql);
               $stmt->execute(['title' => $title]);
               $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
               break;
             case 'value14':
-              $sql = "SELECT id, title FROM song WHere title like 'N%'";
+              $sql = "SELECT id, title, chord  FROM song WHere title like 'N%'";
               $stmt = $conn->prepare($sql);
               $stmt->execute(['title' => $title]);
               $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
               break;
             case 'value15':
-                $sql = "SELECT id, title FROM song WHere title like 'O%'";
+                $sql = "SELECT id, title, chord  FROM song WHere title like 'O%'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute(['title' => $title]);
                 $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 break;
             case 'value16':
-                $sql = "SELECT id, title FROM song WHere title like 'P%'";
+                $sql = "SELECT id, title, chord  FROM song WHere title like 'P%'";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute(['title' => $title]);
                 $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 break;
                 case 'value17':
-                  $sql = "SELECT id, title FROM song WHere title like 'Q%'";
+                  $sql = "SELECT id, title, chord  FROM song WHere title like 'Q%'";
                   $stmt = $conn->prepare($sql);
                   $stmt->execute(['title' => $title]);
                   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   break;
                 case 'value18':
-                  $sql = "SELECT id, title FROM song WHere title like 'R%'";
+                  $sql = "SELECT id, title, chord  FROM song WHere title like 'R%'";
                   $stmt = $conn->prepare($sql);
                   $stmt->execute(['title' => $title]);
                   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   break;
                 case 'value19':
-                    $sql = "SELECT id, title FROM song WHere title like 'S%'";
+                    $sql = "SELECT id, title, chord  FROM song WHere title like 'S%'";
                     $stmt = $conn->prepare($sql);
                     $stmt->execute(['title' => $title]);
                     $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     break;
                 case 'value20':
-                    $sql = "SELECT id, title FROM song WHere title like 'T%'";
+                    $sql = "SELECT id, title, chord  FROM song WHere title like 'T%'";
                     $stmt = $conn->prepare($sql);
                     $stmt->execute(['title' => $title]);
                     $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     break; 
                  case 'value21':
-                  $sql = "SELECT id, title FROM song WHere title like 'U%'";
+                  $sql = "SELECT id, title, chord  FROM song WHere title like 'U%'";
                   $stmt = $conn->prepare($sql);
                   $stmt->execute(['title' => $title]);
                   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   break;
                 case 'value22':
-                  $sql = "SELECT id, title FROM song WHere title like 'V%'";
+                  $sql = "SELECT id, title, chord  FROM song WHere title like 'V%'";
                   $stmt = $conn->prepare($sql);
                   $stmt->execute(['title' => $title]);
                   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   break;
                 case 'value23':
-                    $sql = "SELECT id, title FROM song WHere title like 'W%'";
+                    $sql = "SELECT id, title, chord  FROM song WHere title like 'W%'";
                     $stmt = $conn->prepare($sql);
                     $stmt->execute(['title' => $title]);
                     $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     break;
                 case 'value24':
-                    $sql = "SELECT id, title FROM song WHere title like 'X%'";
+                    $sql = "SELECT id, title, chord  FROM song WHere title like 'X%'";
                     $stmt = $conn->prepare($sql);
                     $stmt->execute(['title' => $title]);
                     $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     break; 
                     case 'value25':
-                      $sql = "SELECT id, title FROM song WHere title like 'Y%'";
+                      $sql = "SELECT id, title, chord  FROM song WHere title like 'Y%'";
                       $stmt = $conn->prepare($sql);
                       $stmt->execute(['title' => $title]);
                       $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
                       break;
                   case 'value26':
-                      $sql = "SELECT id, title FROM song WHere title like 'Z%'";
+                      $sql = "SELECT id, title, chord  FROM song WHere title like 'Z%'";
                       $stmt = $conn->prepare($sql);
                       $stmt->execute(['title' => $title]);
                       $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -227,7 +228,24 @@ if(isset($_POST['select1'])){
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Details</title>
@@ -310,7 +328,7 @@ if(isset($_POST['select1'])){
       <div style="text-align: center;">
          <img src="/uploads/icons/oops.png" width="280" height="155" title="Logo of a company" alt="Logo of a company" />
         <div style="text-align: center;">Sorry, Na hawl mi hla a um hrih lo or na ngan dan a match lo.</div>
-        <p style="text-align: center; font-size: 12px">Tu kan nei mi hla pawl cu tang lam ih um mi pawl an si.</p>
+        <p style="text-align: center; font-size: 12px">Tu kan nei mi hla pawl cu, tang lam ih um mi pawl an si.</p>
 
         <br>
         <br>
@@ -345,10 +363,27 @@ if(isset($_POST['select1'])){
           </select>
           <input type="submit" name="submit" value="Go"/>
         </form>
-        <?php // display the song title
+
+            <table>
+              <tr>
+                <th style="width:80%">Title</th>
+                <th >Original Key</th>
+              </tr>
+              <tr>
+          <tr>
+              <td>
+        <?php // display the song title and chord
+          
           foreach ($songTitle as $song) {
-           echo "<a href='details.php?id={$song['id']}'>{$song['title']} <br> </a>";
+
+          echo "<tr>";
+           echo "<td><a href='details.php?id={$song['id']}'>{$song['title']} <br> </a></td>";
+           echo "<td><a>{$song['chord']}   <br> </a></td>";
+
           } ?>
+          </td>
+              </tr>
+            </table>
 
       </div>
       <br>
