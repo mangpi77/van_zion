@@ -1,31 +1,28 @@
 /*! `Custom` Bootstrap 5 theme */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700);
-$headings-font-family:Montserrat;
+$headings-font-family: Montserrat;
 
-$enable-grid-classes:false;
-$primary:#083358;
-$secondary:#F67280;
-$success:#0074E4;
-$danger:#FF4057;
-$info:#74DBEF;
-$warning:#FC3C3C;
-$light:#F2F2F0;
-$dark:#072247;
-$enable-gradients:true;
-$spacer:1rem;
-$border-width:1px;
+$enable-grid-classes: false;
+$primary: #083358;
+$secondary: #f67280;
+$success: #0074e4;
+$danger: #ff4057;
+$info: #74dbef;
+$warning: #fc3c3c;
+$light: #f2f2f0;
+$dark: #072247;
+$enable-gradients: true;
+$spacer: 1rem;
+$border-width: 1px;
 
 @import "bootstrap";
 
 // Add SASS theme customizations here..
 
-
-
-
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  font-size:16px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
 }
@@ -34,19 +31,16 @@ body {
   color: var(--clr-gray);
 }
 
-.bodyText{
- font-size:12px;
- font-weight: 700;
-   
+.bodyText {
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.titleText{
- padding-top:20px;
- font-size: 16px;
- font-weight: 600;
+.titleText {
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
 }
-
-
 
 .container {
   overflow: hidden;
@@ -59,56 +53,66 @@ body {
   box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
   text-align: left;
   position: relative;
-  background-color:red;
-  width:100%;
-  margin-top:20px;
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left:20px;
-
+  background-color: red;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
-.navbar{
-    width:100%;
+.navbar {
+  width: 100%;
 }
 
-.social_logo{
+.social_logo {
   align-items: center;
-  margin:auto;
+  margin: auto;
 }
 
-
-.col-8{
+.col-8 {
   margin-left: auto;
 }
 
-.col-md-4{
-  background-color:white;
-  border-left:solid;
-  border-color:#eeeeee;
-  margin-top:20px;
+.col-md-4 {
+  background-color: white;
+  border-left: solid;
+  border-color: #eeeeee;
+  margin-top: 20px;
 }
 
-
-.row{
-  background-color:white;
-  padding:0;
-  margin:0;
+.row {
+  background-color: white;
+  padding: 0;
+  margin: 0;
 }
 
-.btn{
+.btn {
   z-index: 999;
 }
-#search{
+#search {
   padding-top: -10px;
 }
 
-.navbar{
-    background-colr:red;
+.navbar {
+  background-colr: red;
 }
 .textbox-rounded {
-
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
 
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

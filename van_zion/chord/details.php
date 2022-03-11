@@ -396,11 +396,25 @@ if(isset($_POST['select1'])){
         <!-- sayem start -->
         <div>Original Key: <?= ucfirst($row['chord']) ?></div><br>
 
-        <div style="font-size:13px"> Hide/Show Keys
-        <label class="switch">
-        <input type="checkbox" id="myCheckbox" onchange="toggleCheck('transpose-keys')" checked>
-        <span class="slider round"></span>
-        </label></div>
+         <!-- Replace [chord] === 'G' with the new column/indicator from db -->
+        <?php if ($row['chord'] === 'G') { ?>
+            <div style="font-size:13px"> Hide/Show Keys
+          <label class="switch">
+          <input type="checkbox" id="myCheckbox" onchange="toggleCheck('transpose-keys')" checked>
+          <span class="slider round"></span>
+          </label></div>
+
+            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+            <script type="text/javascript" src="jquery.transposer.js"></script>
+            <script type="text/javascript">
+            $(function() {
+              $("pre").transpose();
+            });
+            </script>
+          <?php } else { ?>
+
+          <?php } ?>
+
 
         <pre data-key=<?= ucfirst($row['chord']) ?> id="pre">
               <?= ucfirst($row['lyrics']) ?>
@@ -438,15 +452,6 @@ if(isset($_POST['select1'])){
         </div>
         <div class="footer bg-light"><img src="../uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
         </div>
-
-        <!-- sayem Add JS -->
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-        <script type="text/javascript" src="jquery.transposer.js"></script>
-        <script type="text/javascript">
-        $(function() {
-          $("pre").transpose();
-        });
-        </script>
         <?php } ?>
   </body>
 </html>
