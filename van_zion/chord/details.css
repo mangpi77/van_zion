@@ -195,3 +195,57 @@ br {
   display: block;
   margin: 90px 0;
 }
+
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+
+body {
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(to top, #007cba 0%, #eaeef3ba 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.card1 {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+}
+
+.card-body1 {
+  position: relative;
+}
+
+.card-body1,
+.card-footer {
+  padding: 1rem;
+}
+
+.card-body1--subheader {
+  font-size: 1rem;
+}
+
+.card-body1--subheader,
+.card-body1--header {
+  padding-bottom: 8px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .show * {
+    visibility: visible;
+    zoom: 120%;
+    margin-bottom: 40%;
+  }
+  .hide {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+  }
+}
