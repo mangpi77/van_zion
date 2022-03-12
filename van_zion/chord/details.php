@@ -229,23 +229,8 @@ if(isset($_POST['select1'])){
 <html lang="en">
 
     <head>
-    <style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
+    <link href="details.css" rel="stylesheet">
 
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Details</title>
@@ -321,19 +306,14 @@ if(isset($_POST['select1'])){
         <link rel="stylesheet" type="text/css" href="jquery.transposer.css" />
         <div class="titleText"><?= ucwords($row['title']) ?></div>
 
-
-
-
     <?php if (count($row) == 1) { ?>
       <div style="text-align: center;">
-         <img src="/uploads/icons/oops.png" width="280" height="155" title="Logo of a company" alt="Logo of a company" />
+         <img src="/uploads/icons/ss.png" width="280" height="200" title="Logo of a company" alt="Logo of a company" />
         <div style="text-align: center;">Sorry, Na hawl mi hla a um hrih lo or na ngan dan a match lo.</div>
         <p style="text-align: center; font-size: 12px">Tu kan nei mi hla pawl cu, tang lam ih um mi pawl an si.</p>
-
-        <br>
-        <br>
+        <hr style="height:50pt; visibility:hidden;" />
         <form action="" method="post">
-          <select name="select1">
+          <select name="select1"  class="round">
           <option value="value1" <?= $_REQUEST["select1"]=="value1"?" selected='selected'":"" ?>>A</option>
           <option value="value2" <?= $_REQUEST["select1"]=="value2"?" selected='selected'":"" ?>>B</option>
           <option value="value3" <?= $_REQUEST["select1"]=="value3"?" selected='selected'":"" ?>>C</option>
@@ -361,30 +341,26 @@ if(isset($_POST['select1'])){
           <option value="value25" <?= $_REQUEST["select1"]=="value25"?" selected='selected'":"" ?>>Y</option>
           <option value="value26" <?= $_REQUEST["select1"]=="value26"?" selected='selected'":"" ?>>Z</option>
           </select>
-          <input type="submit" name="submit" value="Go"/>
+        
+              <input type="submit" name="submit"  value="Go" class="btn btn-primary rounded-right" style="height: 45px; margin-bottom: 5px">
+     
         </form>
 
-            <table>
-              <tr>
-                <th style="width:80%">Title</th>
-                <th >Original Key</th>
-              </tr>
-              <tr>
-          <tr>
-              <td>
-        <?php // display the song title and chord
-          
-          foreach ($songTitle as $song) {
-
-          echo "<tr>";
-           echo "<td><a href='details.php?id={$song['id']}'>{$song['title']} <br> </a></td>";
-           echo "<td><a>{$song['chord']}   <br> </a></td>";
-
-          } ?>
-          </td>
-              </tr>
-            </table>
-
+        <div class="table-wrapper">
+            <table class="fl-table">
+                  <tr>
+                    <th>Title</th>
+                    <th>Original Key</th>
+                  </tr>
+                  <?php // display the song title and chord  
+                    foreach ($songTitle as $song) {
+                    echo "<tr>";
+                    echo "<td><a style='margin-left:10px' href='details.php?id={$song['id']}'>{$song['title']} <br> </a></td>";
+                    echo "<td><a style='margin-left:10px'>{$song['chord']}   <br> </a></td>";
+                    } ?>
+                </tr>
+              </table>
+        </div>
       </div>
       <br>
 
@@ -396,7 +372,7 @@ if(isset($_POST['select1'])){
         <!-- sayem start -->
         <div>Original Key: <?= ucfirst($row['chord']) ?></div><br>
 
-         <!-- Replace [chord] === 'G' with the new column/indicator from db -->
+         <!-- [chord] === 'F' will be replace with the new column/indicator later -->
         <?php if ($row['chord'] === 'G') { ?>
             <div style="font-size:13px"> Hide/Show Keys
           <label class="switch">
