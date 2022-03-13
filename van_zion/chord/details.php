@@ -170,8 +170,8 @@ if(isset($_POST['select1'])){
         <div class="table-wrapper">
             <table class="fl-table">
                   <tr>
-                    <th>Title</th>
-                    <th>Original Key</th>
+                  <th style="background-color:#083358; color:white; width:80%">Title</th>
+                    <th style="background-color:#888888; color:white;">Original Key</th>
                   </tr>
                   <?php // display the song title and chord  
                     foreach ($songTitle as $song) {
@@ -225,18 +225,34 @@ if(isset($_POST['select1'])){
         <div class="col-md-4 hide">
           <div class="card text-white bg-primary mb-3" style="max-width: auto;">
             <div class="card-header">Summary</div>
-            <div class="card-body">
+            <div class="card-body" style="height:900px">
               <div class="card-title">Title : <?= ucwords($row['title']) ?>
                 <div class="card-title">Master key : <?= strtoupper($row['chord']) ?>
                   <div class="card-title bi bi-123">Hla Number : <?= $row['number'] ?>
 
                     </br>
                     </br>
-                    <p class="card-text"><strong>Download :</strong></p>
+                    <?php if (strlen($row['pdf']) > 0 ||strlen($row['ppt']) > 0 || strlen($row['pro']) > 0 ) { ?>
+                      <p class="card-text"><strong>Download :</strong></p>
+                    <?php } else { ?>
+                      <!--Show Nothing  -->
+                    <?php } ?>
                     <span class="social_logo">
+                    <?php if (strlen($row['pdf']) > 0) { ?>
                       <button type="button" class="btn btn-light px-1"><a href='../uploads/<?= $row['pdf'] ?>'> <img src="../uploads/icons/file-earmark-pdf.svg" alt="" width="40" height="40"></a>PDF</button>
+                    <?php } else { ?>
+                      <!--Show Nothing  -->
+                    <?php } ?>
+                    <?php if (strlen($row['ppt']) > 0) { ?>
                       <button type="button" class="btn btn-light px-1"><a href='../uploads/<?= $row['ppt'] ?>'> <img src="../uploads/icons/file-earmark-ppt.svg" alt="" width="40" height="40"></a>PPT</button>
+                    <?php } else { ?>
+                      <!--Show Nothing  -->
+                    <?php } ?>
+                    <?php if (strlen($row['pro']) > 0) { ?>
                       <button type="button" class="btn btn-light px-1"><a href='../uploads/<?= $row['pro'] ?>'> <img src="../uploads/icons/file-earmark-play.svg" alt="" width="40" height="40"></a>PRO</button>
+                    <?php } else { ?>
+                      <!--Show Nothing  -->
+                    <?php } ?>
                     </span>
                     <br>
                     <br>
@@ -246,7 +262,6 @@ if(isset($_POST['select1'])){
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
