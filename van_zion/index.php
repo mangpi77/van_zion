@@ -5,23 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>LAI HLABU</title>
+  <title>CHRISTIAN HLABU</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
 
   <link rel="stylesheet" href="theme.css">
+  <link href="chord/details.css" rel="stylesheet">
 
 </head>
 
 <body class="bg-primary">
+  <div>
+  <img style="    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;"src="/uploads/icons/cbana.png" width="100" height="100" title="CBANA" alt="CBNA" />
+</div>
   <div class="container">
-    <div class="row mt-4">
-      <div class="col-md-8 mx-auto bg-light rounded p-4">
-        <h5 class="text-center font-weight-bold">Lai Hlabu</h5>
+    <div class="row mt-4" >
+      <div class="col-md-8 mx-auto rounded p-4" style="background-color:#c1cfdb36">
+        <h5 class="text-center font-weight-bold">Christian Hlabu</h5>
         <hr class="my-1">
-        <h5 class="text-center text-dark">A hnuai ah hla hmin ngan aw la hawl aw</h5>
-        <form action="details.php" method="post" class="p-3">
+        <p class="text-center text-dark">A hnuai ah hla hmin ngan aw la hawl aw</p>
+        <form action="chord/details.php" method="post" class="p-3">
           <div class="input-group">
             <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-primary width =250px;" placeholder="Search..." autocomplete="off" required>
             <div class="input-group-append">
@@ -30,7 +37,7 @@
           </div>
         </form>
       </div>
-      <div class="col-md-6" style="position: relative;margin-top: -38px;margin-left: 215px;">
+      <div class="col-8 mx-auto" style="position: relative;margin-top: -38px;margin-left: 215px;">
         <div class="list-group" id="show-list">
           <!-- Here autocomplete list will be display -->
         </div>
