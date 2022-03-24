@@ -1,6 +1,3 @@
-
-//script for search auto complete
-
 $(document).ready(function () {
   // Send Search Text to the server
   $("#search").keyup(function () {
@@ -26,3 +23,5 @@ $(document).ready(function () {
     $("#show-list").html("");
   });
 });
+
+$('.collapse').collapse()

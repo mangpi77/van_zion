@@ -1,5 +1,5 @@
 <?php  
-//establish database connection
+
 $sname = "localhost";
 $uname = "root";
 $password = "";

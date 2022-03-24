@@ -1,18 +1,20 @@
 
-<?php
 
-//database crendentials
+
+<?php
   const DBHOST = 'localhost';        // Database Hostname
   const DBUSER = 'root';             // MySQL Username
   const DBPASS = '';                 // MySQL Password
   const DBNAME = 'songbook';  // MySQL Database name
 
+
+
+
   // Data Source Network
   $dsn = 'mysql:host=' . DBHOST . ';dbname=' . DBNAME . '';
 
   // Connection Variable
-  $conn = null;
-
+  $conn = null; 
   // Connect Using PDO (PHP Data Output)
   try {
     $conn = new PDO($dsn, DBUSER, DBPASS);

@@ -1,0 +1,93 @@
+/*! `Custom` Bootstrap 5 theme */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700);
+body {
+  color: var(--clr-gray);
+}
+
+.bodyText {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.titleText {
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.container {
+  overflow: hidden;
+  box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+  text-align: left;
+  position: relative;
+}
+
+.footer {
+  box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+  background-color: black;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 11%;
+  
+}
+
+.navbar {
+  width: 100%;
+}
+
+.social_logo {
+  align-items: center;
+  margin: auto;
+}
+
+.col-8 {
+  padding: none;
+
+  margin-left: none;
+  margin-right: none;
+}
+
+.col-md-4 {
+  background-color: white;
+  border-left: solid;
+  border-color: #eeeeee;
+  margin-top: 20px;
+}
+
+.row {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  z-index: 999;
+}
+#search {
+  padding-top: -10px;
+}
+
+.navbar {
+  background-colr: rgb(121, 109, 109);
+}
+.textbox-rounded {
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

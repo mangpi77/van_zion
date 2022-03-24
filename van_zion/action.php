@@ -1,8 +1,6 @@
 <?php
   require_once 'config.php';
 
-//search user input in database
-
   if (isset($_POST['query'])) {
     $inpText = $_POST['query'];
     $sql = 'SELECT title FROM song WHERE title LIKE :title';
