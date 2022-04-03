@@ -9,7 +9,7 @@ $stmt->execute();
 $songs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $grouped = [];
 foreach ($songs as $song) {
-    $initial = $song['title'][0];
+    $initial = strtoupper($song['title'][0]);
     $grouped[$initial][] = $song;
 }
 list($left, $right) = array_chunk($grouped, ceil(count($grouped) / 2), true);
@@ -52,7 +52,7 @@ $right_column = print_songs($right);
 $grouped = [];
 
 foreach($songs as $song) {
-	$initial = $song['chord'];
+    $initial = strtoupper($song['chord'][0]);
 	$grouped[$initial][] = $song;
 }
 
