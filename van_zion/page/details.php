@@ -170,7 +170,6 @@ function toggleCheck(e) {
             echo " <div style='text-align: center'>
             <img src='../uploads/icons/ss.png' width='280' height='200' title='Sorry, not found.' alt='Sorry, not found.' />
             <div style='text-align: center;'>Sorry, Na hawl mi '<b>$search</b>' a um hrih lo or na ngan dan a match awk lo.</div>
-            <p style='text-align: center; font-size: 12px'>Tu kan nei mi hla pawl cu, hi nah ah a um ding.</p>
             <hr style='height:50pt; visibility:hidden;' />
         </div>";
         echo "<br>";
