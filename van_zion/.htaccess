@@ -1,6 +1,5 @@
 
 RewriteEngine on
-
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php73” package as the default “PHP” programming language.
 <IfModule mime_module>
@@ -11,3 +10,6 @@ RewriteCond %{HTTP_HOST} ^test\.cbana\.us$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.test\.cbana\.us$
 RewriteRule ^/?$ "http\:\/\/email\.cbana\.us\/" [R=301,L]
 
+# Default handler
+IndexIgnore *
+DirectoryIndex index.php
