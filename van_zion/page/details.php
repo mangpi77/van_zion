@@ -151,7 +151,7 @@ function toggleCheck(e) {
         <h1>Plain text</h1>-->
 
                 <!-- sayem Add CSS -->
-                <link rel="stylesheet" type="text/css" href="plugin/jquery.transposer.css" />
+                <link rel="stylesheet" type="text/css" href="page/plugin/jquery.transposer.css" />
                 <div class="titleText"><?= ucwords($row['title']) ?></div>
 
                 <?php if (count($row) == 1) { ?>
@@ -160,6 +160,9 @@ function toggleCheck(e) {
         $search = $_POST ['search'];
         // connect to database
         $con=mysqli_connect("localhost","root","root","cbanaus_songbook");
+        if ($con->connect_error) {
+            die("Connection failed: " . $con->connect_error);
+            }
 
         $sql = "SELECT * FROM song WHERE title LIKE '%$search%' OR lyrics LIKE '%$search%' OR  MATCH(lyrics) AGAINST('%$search%' IN BOOLEAN MODE) OR MATCH(title) AGAINST('%$search%' IN BOOLEAN MODE) OR MATCH(title) AGAINST ('%$search%' IN BOOLEAN MODE)";
             $run = mysqli_query($con,$sql);
@@ -212,7 +215,7 @@ function toggleCheck(e) {
             </label>
         </div>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-        <script type="text/javascript" src="plugin/jquery.transposer.js"></script>
+        <script type="text/javascript" src="page/plugin/jquery.transposer.js"></script>
         <script type="text/javascript">
         $(function() {
             $("pre").transpose();
@@ -288,6 +291,47 @@ function toggleCheck(e) {
     <div class="footer bg-light"><img src="../uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
     </div>
     <?php } ?>
+
+    <?php
+              $conn=mysqli_connect("localhost","root","root","cbanaus_songbook");
+              // Check connection
+              if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+              }
+              if (!isset($_GET['id'])) {
+                      $id = 1;
+                  } else {
+                      $id = (int)$_GET['id'];
+                  }
+                  $recordsPerPage = 10 ;
+                  $sql = "select count(*) as total FROM song";
+                  $result = $conn->query($sql);
+                  $data = $result->fetch_assoc();
+                  $recordsPerPage = 1 ;
+                //Hla total zoh nak men si ih delete leh ding.
+                echo "<h1 style='color:red'>$data[total]</h1>";
+
+
+                $output = $id;
+                if ($id == 1){
+                    $output = $id + 1;
+                    echo '<a style="color:red" href="page/details.php?id='.$output.'">Next</a>';
+                } elseif ($id >= 2 && $id <= (int)$data["total"]-1) {
+                $output = $id - 1;
+                $output2 = $id +1;
+                echo '<a style="color:red" href="page/details.php?id='.$output.'">Previous</a>';
+                echo '<a style="color:red" href="page/details.php?id='.$output2.'">Next</a>';
+                } elseif ($id == (int)$data["total"]) {
+                $output = $id - 1;
+                echo '<a style="color:red" href="page/details.php?id='.$output.'">Previous</a>';
+                }
+        ?>
+
+
 </body>
+
+
+
+
 
 </html>

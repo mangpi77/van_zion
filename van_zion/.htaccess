@@ -10,6 +10,3 @@ RewriteCond %{HTTP_HOST} ^test\.cbana\.us$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.test\.cbana\.us$
 RewriteRule ^/?$ "http\:\/\/email\.cbana\.us\/" [R=301,L]
 
-# Default handler
-IndexIgnore *
-DirectoryIndex index.php

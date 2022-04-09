@@ -145,7 +145,9 @@ $right_column2 = print_songs2($right);
                         <li class="nav-item">
                         </li>
                     </ul>
-                    <form action="details.php" method="post" class="">
+
+
+                    <form action="details.php?id=<?= $song['id'] ?>" method="post" hidden>
                         <div class="input-group textbox-rounded">
                             <input type="text" name="search" id="search"
                                 class="form-control form-control-md textbox-rounded border-primary"
@@ -156,8 +158,7 @@ $right_column2 = print_songs2($right);
                             </div>
                         </div>
                     </form>
-
-                    <form action="details.php" method="post" hidden>
+                    <form action="details.php?id=<?= $song['id'] ?>" method="post" hidden>
                         <input type="text" name="search" id="search2"
                             class="form-control form-control-lg rounded-0 border-primary width =250px;"
                             placeholder="Search..." autocomplete="off" required="">
