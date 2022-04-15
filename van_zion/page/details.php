@@ -80,8 +80,8 @@ function toggleCheck(e) {
     <title>Details</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../stylesheet.css">
-    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../van_zion/stylesheet.css">
+    <link rel="stylesheet" href="../van_zion/theme.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Montserrat:100,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i">
     <script src="bootstrap/scripts/jquery.min.js"></script>
@@ -107,7 +107,7 @@ function toggleCheck(e) {
     <div class="container mx-auto">
         <div class="row text-left">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="../"><strong><embed src="../uploads/icons/logo_full_color.png"
+                <a class="navbar-brand" href="../"><strong><embed src="../van_zion/uploads/icons/logo_full_color.png"
                             height="87px" width=150px"></strong></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -151,7 +151,7 @@ function toggleCheck(e) {
         <h1>Plain text</h1>-->
 
                 <!-- sayem Add CSS -->
-                <link rel="stylesheet" type="text/css" href="plugin/jquery.transposer.css" />
+                <link rel="stylesheet" type="text/css" href="page/plugin/jquery.transposer.css" />
                 <div class="titleText"><?= ucwords($row['title']) ?></div>
 
                 <?php if (count($row) == 1) { ?>
@@ -160,6 +160,9 @@ function toggleCheck(e) {
         $search = $_POST ['search'];
         // connect to database
         $con=mysqli_connect("localhost","root","root","cbanaus_songbook");
+        if ($con->connect_error) {
+            die("Connection failed: " . $con->connect_error);
+            }
 
         $sql = "SELECT * FROM song WHERE title LIKE '%$search%' OR lyrics LIKE '%$search%' OR  MATCH(lyrics) AGAINST('%$search%' IN BOOLEAN MODE) OR MATCH(title) AGAINST('%$search%' IN BOOLEAN MODE) OR MATCH(title) AGAINST ('%$search%' IN BOOLEAN MODE)";
             $run = mysqli_query($con,$sql);
@@ -168,7 +171,7 @@ function toggleCheck(e) {
             if ($foundnum==0)
             {
             echo " <div style='text-align: center'>
-            <img src='../uploads/icons/ss.png' width='280' height='200' title='Sorry, not found.' alt='Sorry, not found.' />
+            <img src='../van_zion/uploads/icons/ss.png' width='280' height='200' title='Sorry, not found.' alt='Sorry, not found.' />
             <div style='text-align: center;'>Sorry, Na hawl mi '<b>$search</b>' a um hrih lo or na ngan dan a match awk lo.</div>
             <hr style='height:50pt; visibility:hidden;' />
         </div>";
@@ -196,7 +199,7 @@ function toggleCheck(e) {
                 <br>
 
             </div>
-            <div class="footer bg-light"><img src="../uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
+            <div class="footer bg-light"><img src="../van_zion/uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
         </div>
 
         <?php } else { ?>
@@ -212,7 +215,7 @@ function toggleCheck(e) {
             </label>
         </div>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-        <script type="text/javascript" src="plugin/jquery.transposer.js"></script>
+        <script type="text/javascript" src="page/plugin/jquery.transposer.js"></script>
         <script type="text/javascript">
         $(function() {
             $("pre").transpose();
@@ -251,24 +254,24 @@ function toggleCheck(e) {
                             <span class="social_logo">
                                 <?php if (strlen($row['pdf']) > 0) { ?>
                                 <button type="button" class="btn btn-light px-1"><a
-                                        href='../uploads/<?= $row['pdf'] ?>'> <img
-                                            src="../uploads/icons/file-earmark-pdf.svg" alt="" width="40"
+                                        href='../van_zion/uploads/<?= $row['pdf'] ?>'> <img
+                                            src="../van_zion/uploads/icons/file-earmark-pdf.svg" alt="" width="40"
                                             height="40"></a>PDF</button>
                                 <?php } else { ?>
                                 <!--Show Nothing  -->
                                 <?php } ?>
                                 <?php if (strlen($row['ppt']) > 0) { ?>
                                 <button type="button" class="btn btn-light px-1"><a
-                                        href='../uploads/<?= $row['ppt'] ?>'> <img
-                                            src="../uploads/icons/file-earmark-ppt.svg" alt="" width="40"
+                                        href='../van_zion/uploads/<?= $row['ppt'] ?>'> <img
+                                            src="../van_zion/uploads/icons/file-earmark-ppt.svg" alt="" width="40"
                                             height="40"></a>PPT</button>
                                 <?php } else { ?>
                                 <!--Show Nothing  -->
                                 <?php } ?>
                                 <?php if (strlen($row['pro']) > 0) { ?>
                                 <button type="button" class="btn btn-light px-1"><a
-                                        href='../uploads/<?= $row['pro'] ?>'> <img
-                                            src="../uploads/icons/file-earmark-play.svg" alt="" width="40"
+                                        href='../van_zion/uploads/<?= $row['pro'] ?>'> <img
+                                            src="../van_zion/uploads/icons/file-earmark-play.svg" alt="" width="40"
                                             height="40"></a>PRO</button>
                                 <?php } else { ?>
                                 <!--Show Nothing  -->
@@ -285,9 +288,48 @@ function toggleCheck(e) {
             </div>
         </div>
     </div>
-    <div class="footer bg-light"><img src="../uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
+    <div class="footer bg-light"><img src="../van_zion/uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
     </div>
     <?php } ?>
+
+    <?php
+              $conn=mysqli_connect("localhost","root","root","cbanaus_songbook");
+              // Check connection
+              if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+              }
+              if (!isset($_GET['id'])) {
+                      $id = 1;
+                  } else {
+                      $id = (int)$_GET['id'];
+                  }
+                  $recordsPerPage = 10 ;
+                  $sql = "select count(*) as total FROM song";
+                  $result = $conn->query($sql);
+                  $data = $result->fetch_assoc();
+                  $recordsPerPage = 1 ;
+                //Hla total zoh nak men si ih delete leh ding.
+                echo "<h1 style='color:red'>$data[total]</h1>";
+
+
+                $output = $id;
+                if ($id == 1){
+                    $output = $id + 1;
+                    echo '<a style="color:red" href="page/details.php?id='.$output.'">Next</a>';
+                } elseif ($id >= 2 && $id <= (int)$data["total"]-1) {
+                $output = $id - 1;
+                $output2 = $id +1;
+                echo '<a style="color:red" href="page/details.php?id='.$output.'">Previous</a>';
+                echo '<a style="color:red" href="page/details.php?id='.$output2.'">Next</a>';
+                } elseif ($id == (int)$data["total"]) {
+                $output = $id - 1;
+                echo '<a style="color:red" href="page/details.php?id='.$output.'">Previous</a>';
+                }
+        ?>
+<!--April 14-->
+
 </body>
+
+
 
 </html>
