@@ -245,6 +245,9 @@ $right_column2 = print_songs2($right);
     }
     </script>
 
+    <!-- scroll up -->
+    <?php require_once '../components/scroll.php'; ?>
+
 </body>
 
 </html>
