@@ -296,6 +296,8 @@ function toggleCheck(e) {
     <?php } ?>
 
 <!--April 14-->
+    <!-- scroll up -->
+    <?php require_once '../components/scrollup.php'; ?>
 
 </body>
 
