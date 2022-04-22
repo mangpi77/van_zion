@@ -1,8 +1,8 @@
 <?php
   const DBHOST = 'localhost';        // Database Hostname
   const DBUSER = 'root';             // MySQL Username
-  const DBPASS = '';                 // MySQL Password
-  const DBNAME = 'cbana_songbook';  // MySQL Database name
+  const DBPASS = 'root';                 // MySQL Password
+  const DBNAME = 'cbanaus_songbook';  // MySQL Database name
   // Data Source Network
   $dsn = 'mysql:host=' . DBHOST . ';dbname=' . DBNAME . '';
 
