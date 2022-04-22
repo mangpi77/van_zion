@@ -23,7 +23,7 @@ function print_songs(array $songs)
         foreach ($songsByLetter as $song) {
             $html .= "
             <tr>
-            <td><a href=javascript:void(0); style='margin-left:10px' onclick=myFunction(this.name) name='{$song['title']}'>{$song['title']}</a><td>
+            <td><a href='details.php?id={$song['id']}'; style='margin-left:10px' onclick=myFunction(this.name) name='{$song['title']}'>{$song['title']}</a><td>
             <td><a style='margin-left:10px'>{$song['number']}   <br> </a></td>
             ";
 
@@ -70,7 +70,7 @@ function print_songs2(array $songs) {
 		foreach($songsByLetter as $song) {
             $html .= "
             <tr>
-            <td><a href=javascript:void(0); style='margin-left:10px' onclick=myFunction(this.name) name='{$song['title']}'>{$song['title']}</a><td>
+            <td><a href='details.php?id={$song['id']}'; style='margin-left:10px' onclick=myFunction(this.name) name='{$song['title']}'>{$song['title']}</a><td>
             <td><a style='margin-left:10px'>{$song['number']}   <br> </a></td>
             ";
 		}
@@ -89,8 +89,6 @@ $right_column2 = print_songs2($right);
 <html lang="en">
 
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
@@ -145,25 +143,7 @@ $right_column2 = print_songs2($right);
                         <li class="nav-item">
                         </li>
                     </ul>
-                    <form action="details.php" method="post" class="">
-                        <div class="input-group textbox-rounded">
-                            <input type="text" name="search" id="search"
-                                class="form-control form-control-md textbox-rounded border-primary"
-                                placeholder="Search..." autocomplete="on" required>
-                            <div class="input-group-append">
-                                <input type="submit" name="submit" value="Search"
-                                    class="btn btn-primary textbox-rounded">
-                            </div>
-                        </div>
-                    </form>
 
-                    <form action="details.php" method="post" hidden>
-                        <input type="text" name="search" id="search2"
-                            class="form-control form-control-lg rounded-0 border-primary width =250px;"
-                            placeholder="Search..." autocomplete="off" required="">
-                        <input type="submit" id='searchclick' name="submit" value="Search"
-                            class="btn btn-primary rounded-right">
-                    </form>
                 </div>
             </nav>
             <button class="tablink" onclick="openPage('title', this, 'grey')" id="defaultOpen">A THULU IN
@@ -236,18 +216,13 @@ $right_column2 = print_songs2($right);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
-    <script>
-    function myFunction(a) {
 
-        //  alert(a);
-        $("#search2").val(a);
-        $("#searchclick").trigger("click");
-    }
-    </script>
 
 </body>
 
+
 </html>
+
 
 <script>
 function openPage(pageName, elmnt, color) {

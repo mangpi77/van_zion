@@ -21,6 +21,35 @@ if (isset($_POST['submit'])) {
 
 <?php
   require_once '../config.php';
+  $id = (int)$_GET['id'];
+
+
+    if (!isset($_COOKIE['view_counted'])) {
+        setcookie('view_counted', $id, time() + (86400 * 30), "/"); // 86400 = 1 day
+        if (!isset($_SESSION['recent_posts'][$id])) {
+            $sql = "UPDATE song SET count = count + 1 WHERE id = $id";
+            $_SESSION['recent_posts'][$id] = 1;
+        }
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+    }elseif (isset($_COOKIE['view_counted']) && $_COOKIE['view_counted'] != $id) {
+        setcookie('view_counted', $id, time() + (86400 * 30), "/"); // 86400 = 1 day
+        if (!isset($_SESSION['recent_posts'][$id])) {
+            $sql = "UPDATE song SET count = count + 1 WHERE id = $id";
+            $_SESSION['recent_posts'][$id] = 1;
+        }
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }else{
+        //you have already counted this as view.
+    }
+
+
+?>
+
+<?php
+  require_once '../config.php';
   //$sql = 'SELECT id, title FROM song ORDER BY title ASC;';
   $sql = "SELECT id, title, chord FROM song Where title like 'A%'";
   $stmt = $conn->prepare($sql);
@@ -29,6 +58,7 @@ if (isset($_POST['submit'])) {
   // fetch all rows
   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 
 <?php
  require_once '../config.php';
@@ -292,6 +322,7 @@ function toggleCheck(e) {
     </div>
     <?php } ?>
 
+
     <?php
               $conn=mysqli_connect("localhost","root","root","cbanaus_songbook");
               // Check connection
@@ -327,6 +358,7 @@ function toggleCheck(e) {
                 }
         ?>
 <!--April 14-->
+
 
 </body>
 
