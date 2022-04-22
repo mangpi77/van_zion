@@ -2,9 +2,9 @@
 
 $sname = "localhost";
 $uname = "root";
-$password = "";
+$password = "root";
 
-$db_name = "cbana_songbook";
+$db_name = "cbanaus_songbook";
 
 $conn = mysqli_connect($sname, $uname, $password, $db_name);
 

@@ -1,15 +1,3 @@
-<?php
-  require_once 'config.php';
-  //$sql = 'SELECT id, title FROM song ORDER BY title ASC;';
-  $sql = "SELECT * FROM song ORDER BY count DESC LIMIT 10";
-  $stmt = $conn->prepare($sql);
-  $stmt->execute(['title' => $title]);
-  
-  // fetch all rows
-  $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,26 +40,7 @@
 
 <div class="container">
     <div class="row mt-4">
-        <div class="col-md-12 mx-auto rounded p-4" style="background-color:#ffffff">
-            <div class="table-wrapper">
-                <p style="color:black">Top 10 views tam bik</p>
-                <table class="fl-table">
-                    <tr>
-                        <th style="background-color:#083358; color:white"></th>
-                        <th style="background-color:#083358; color:white; width:80%">Title</th>
-                        <th style="background-color:#888888; color:white;">Views</th>
-                    </tr>
-                    <?php // display the song title and chord  
-                    foreach ($songTitle as $song) {
-                    echo "<tr>";
-                    echo "<td><img width='30px' height='30px' src='./uploads/icons/note.png' style='margin-left:20px' /></td>";
-                    echo "<td><a color: #2a7dc4' href='page/details.php?id={$song['id']}'>{$song['title']} <br> </a></td>";
-                    echo "<td><a style='margin-left:10px; color: #2a7dc4'>{$song['count']}   <br> </a></td>";
-                    } ?>
-
-                    </tr>
-                </table>
-            </div>
+        <div class="col-md-8 mx-auto rounded p-4" style="background-color:#ffffff">
 
         </div>
 

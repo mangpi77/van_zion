@@ -21,35 +21,6 @@ if (isset($_POST['submit'])) {
 
 <?php
   require_once '../config.php';
-  $id = (int)$_GET['id'];
-
-
-    if (!isset($_COOKIE['view_counted'])) {
-        setcookie('view_counted', $id, time() + (86400 * 30), "/"); // 86400 = 1 day
-        if (!isset($_SESSION['recent_posts'][$id])) {
-            $sql = "UPDATE song SET count = count + 1 WHERE id = $id";
-            $_SESSION['recent_posts'][$id] = 1;
-        }
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-
-    }elseif (isset($_COOKIE['view_counted']) && $_COOKIE['view_counted'] != $id) {
-        setcookie('view_counted', $id, time() + (86400 * 30), "/"); // 86400 = 1 day
-        if (!isset($_SESSION['recent_posts'][$id])) {
-            $sql = "UPDATE song SET count = count + 1 WHERE id = $id";
-            $_SESSION['recent_posts'][$id] = 1;
-        }
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-    }else{
-        //you have already counted this as view.
-    }
-
-
-?>
-
-<?php
-  require_once '../config.php';
   //$sql = 'SELECT id, title FROM song ORDER BY title ASC;';
   $sql = "SELECT id, title, chord FROM song Where title like 'A%'";
   $stmt = $conn->prepare($sql);
@@ -58,7 +29,6 @@ if (isset($_POST['submit'])) {
   // fetch all rows
   $songTitle = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 
 <?php
  require_once '../config.php';
@@ -264,6 +234,9 @@ function toggleCheck(e) {
             </div>
         </div>
 
+        <!-- next & Previous -->
+        <?php require_once '../components/next.php'; ?>
+
         <!-- sayem end -->
     </div>
     <div class="col-md-4 hide">
@@ -322,43 +295,7 @@ function toggleCheck(e) {
     </div>
     <?php } ?>
 
-
-    <?php
-              $conn=mysqli_connect("localhost","root","root","cbanaus_songbook");
-              // Check connection
-              if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-              }
-              if (!isset($_GET['id'])) {
-                      $id = 1;
-                  } else {
-                      $id = (int)$_GET['id'];
-                  }
-                  $recordsPerPage = 10 ;
-                  $sql = "select count(*) as total FROM song";
-                  $result = $conn->query($sql);
-                  $data = $result->fetch_assoc();
-                  $recordsPerPage = 1 ;
-                //Hla total zoh nak men si ih delete leh ding.
-                echo "<h1 style='color:red'>$data[total]</h1>";
-
-
-                $output = $id;
-                if ($id == 1){
-                    $output = $id + 1;
-                    echo '<a style="color:red" href="page/details.php?id='.$output.'">Next</a>';
-                } elseif ($id >= 2 && $id <= (int)$data["total"]-1) {
-                $output = $id - 1;
-                $output2 = $id +1;
-                echo '<a style="color:red" href="page/details.php?id='.$output.'">Previous</a>';
-                echo '<a style="color:red" href="page/details.php?id='.$output2.'">Next</a>';
-                } elseif ($id == (int)$data["total"]) {
-                $output = $id - 1;
-                echo '<a style="color:red" href="page/details.php?id='.$output.'">Previous</a>';
-                }
-        ?>
 <!--April 14-->
-
 
 </body>
 
