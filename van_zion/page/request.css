@@ -1,0 +1,193 @@
+#frmContact {
+  -ms-flex-item-align: center;
+  border-top: #a2d0c8 2px solid;
+
+  padding: 10px;
+}
+
+#frmContact div {
+  margin-bottom: 20px;
+}
+
+#frmContact div label {
+  margin: 5px 0px 0px 5px;
+  color: #49615d;
+}
+
+.demoInputBox {
+  padding: 10px;
+  border: #a5d2ca 1px solid;
+  border-radius: 4px;
+  background-color: #fff;
+
+  margin-top: 5px;
+}
+
+.error {
+  background-color: #ff6600;
+  padding: 8px 10px;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.success {
+  background-color: #c3c791;
+  padding: 8px 10px;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.info {
+  font-size: 0.8em;
+  color: #ff6600;
+  letter-spacing: 2px;
+  padding-left: 5px;
+}
+
+.btnAction {
+  background-color: #82a9a2;
+  padding: 10px 40px;
+  color: #fff;
+  border: #739690 1px solid;
+  border-radius: 4px;
+}
+
+.btnAction:focus {
+  outline: none;
+}
+.column-right {
+  margin-right: 6px;
+}
+.contact-row {
+  display: inline-block;
+}
+
+div#success {
+  text-align: center;
+  box-shadow: 1px 1px 5px #455644;
+  background: #bae8ba;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+.inputBox {
+  width: 100%;
+  margin: 5px 0px 15px 0px;
+  border: #dedede 1px solid;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.contact-form {
+  margin: 0px;
+  background-color: white;
+  font-family: Arial;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -210px;
+  margin-top: -255px;
+  box-shadow: 1px 1px 5px #444444;
+  padding: 20px 40px 40px 40px;
+}
+
+#contact-icon {
+  padding: 10px 5px 5px 12px;
+
+  color: white;
+  box-shadow: 1px 1px 5px grey;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 60px auto;
+}
+
+.info {
+  color: #d30a0a;
+  letter-spacing: 2px;
+  padding-left: 5px;
+}
+
+#send {
+  background-color: #09f;
+  border: 1px solid #1398f1;
+  font-family: Arial;
+  color: white;
+
+  padding: 10px;
+  cursor: pointer;
+}
+
+#contact-popup h1 {
+  font-weight: normal;
+  text-align: center;
+  margin: 10px 0px 20px 0px;
+}
+
+.input-error {
+  border: #e66262 1px solid;
+}
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

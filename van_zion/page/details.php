@@ -206,26 +206,29 @@ function toggleCheck(e) {
             <hr style='height:50pt; visibility:hidden;' />
         </div>";
         echo "<br>";
-            
-            }
-            else{
-                echo "<p style='margin-left:20px'><strong> $foundnum Results Found for \"" .$search."\" </strong></p>";      
-                $sql = "SELECT * FROM song WHERE title LIKE '%$search%' OR lyrics LIKE '%$search%' OR MATCH(lyrics) AGAINST('%$search%' IN BOOLEAN MODE) OR MATCH(title) AGAINST('%$search%' IN BOOLEAN MODE) OR MATCH(title) AGAINST ('%$search%' IN BOOLEAN MODE)";
-            $getquery = mysqli_query($con,$sql);
 
-            echo'<table>';
+                }
+                else{
+                echo "<p style='margin-left:20px'><strong> $foundnum Results Found for \"" .$search."\" </strong></p>";
+                $sql = "SELECT * FROM song WHERE title LIKE '%$search%' OR lyrics LIKE '%$search%' OR MATCH(lyrics)
+                AGAINST('%$search%' IN BOOLEAN MODE) OR MATCH(title) AGAINST('%$search%' IN BOOLEAN MODE) OR
+                MATCH(title) AGAINST ('%$search%' IN BOOLEAN MODE)";
+                $getquery = mysqli_query($con,$sql);
 
-            while($runrows = mysqli_fetch_array($getquery))
-            {
+                echo'<table>';
 
-                echo "<tr>";
-                echo "<td><a style='margin-left:10px' href='page/details.php?id={$runrows['id']}'>{$runrows['title']} <br> </a></td>";
-                echo "<td><a style='margin-left:10px'>{$runrows['chord']}   <br> </a></td>";
-            }
+                    while($runrows = mysqli_fetch_array($getquery))
+                    {
 
-            }
-            echo'</table>'
-            ?>
+                    echo "<tr>";
+                        echo "<td><a style='margin-left:10px' href='page/details.php?id={$runrows['
+                                id']}'>{$runrows['title']} <br> </a></td>";
+                        echo "<td><a style='margin-left:10px'>{$runrows['chord']} <br> </a></td>";
+                        }
+
+                        }
+                        echo'</table>'
+                ?>
                 <br>
 
             </div>
@@ -321,6 +324,42 @@ function toggleCheck(e) {
     <div class="footer bg-light"><img src="../uploads/icons/footer_logo_hd.png" width="161" height="50"></div>
     </div>
     <?php } ?>
+
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "379406772189311");
+    chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml: true,
+            version: 'v13.0'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+
 
 </body>
 
