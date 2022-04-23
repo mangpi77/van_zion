@@ -31,11 +31,11 @@
             </div>
 
 
-            <div class="card border-secondary mb-3" style="max-width: 50rem;">
-                <div class="card-header">Number
-                    <input type="text" name="number">
-                </div>
-            </div>
+<!--            <div class="card border-secondary mb-3" style="max-width: 50rem;">-->
+<!--                <div class="card-header">Number-->
+<!--                    <input type="text" name="number">-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="card border-secondary mb-3" style="max-width: 50rem;">
                 <div class="card-header">Lyrics

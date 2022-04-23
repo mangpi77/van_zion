@@ -24,7 +24,7 @@ function print_songs(array $songs)
             $html .= "
             <tr>
             <td><a href=javascript:void(0); style='margin-left:10px' onclick=myFunction(this.name) name='{$song['title']}'>{$song['title']}</a><td>
-            <td><a style='margin-left:10px'>{$song['number']}   <br> </a></td>
+            <td> <!-- <a style='margin-left:10px'>{$song['number']} -->  <br> <!--</a> --> </td>
             ";
 
         }
@@ -71,7 +71,7 @@ function print_songs2(array $songs) {
             $html .= "
             <tr>
             <td><a href=javascript:void(0); style='margin-left:10px' onclick=myFunction(this.name) name='{$song['title']}'>{$song['title']}</a><td>
-            <td><a style='margin-left:10px'>{$song['number']}   <br> </a></td>
+            <td> <!-- <a style='margin-left:10px'>{$song['number']}  --> <br> <!-- </a> --> </td>
             ";
 		}
         $html .= "";
@@ -166,26 +166,28 @@ $right_column2 = print_songs2($right);
                     </form>
                 </div>
             </nav>
-            <button class="tablink" onclick="openPage('title', this, 'grey')" id="defaultOpen">A THULU IN
+            <div class = "navcenter">
+            <button class="tablink" onclick="openPage('title', this)" id="defaultOpen">A THULU IN
                 HAWLNAK</button>
-            <button class="tablink" onclick="openPage('key', this, 'grey')">A KEY IN HAWLNAK</button>
+            <button class="tablink" onclick="openPage('key', this)">A KEY IN HAWLNAK</button>
+            </div>
             <div id="title" class="tabcontent">
                 <div class="background-color-1">
 
-                    <div class="column">
-
+                    <div class="column" >
                         <div style="margin-left:80px">
-                            <h2><i>( A - M )<i></h2>
+                            <h4>(A - M)</h4>
                             <?php
                         echo
-                        $left_column
-                        ?>
-                        </div>
 
+                        "<div class='lineline'>".$left_column ."</div>"
+                        ?>
+
+                        </div>
                     </div>
                     <div class="column">
-                        <div style="margin-left:100px">
-                            <h2><i>( N - Z )<i></h2>
+                        <div style="margin-left:70px">
+                            <h4>(N - Z)</h4>
                             <?php
                         echo
                         $right_column
@@ -207,9 +209,10 @@ $right_column2 = print_songs2($right);
                         ?>
                         </div>
 
+
                     </div>
                     <div class="column">
-                        <div style="margin-left:190px">
+                        <div style="margin-left:70px">
                             <?php
                         echo
                         $right_column2

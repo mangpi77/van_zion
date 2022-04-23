@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700);
 * {
   box-sizing: border-box;
 }
@@ -7,7 +8,9 @@ body,
 html {
   height: 100%;
   margin: 0;
-  font-family: Arial;
+  font-family: Montserrat;
+  font-style: normal;
+
 }
 
 /* Style tab links */
@@ -20,11 +23,25 @@ html {
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 25%;
+  width: auto;
+  margin-left:10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: -2px 3px 3px rgba(88, 89, 69, 0.2);
+}
+
+.tablink {
+  background-color: #083358;
+  color: #FFFFFF;
 }
 
 .tablink:hover {
-  background-color: #777;
+  background-color: #f2f2f0 ;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Style the tab content (and add height:100% for full page content) */
@@ -33,6 +50,7 @@ html {
   display: none;
   padding: 20px;
   width: 100%;
+  text-decoration: none;
 }
 
 #Home {
@@ -67,3 +85,8 @@ html {
   display: table;
   clear: both;
 }
+
+.navcenter{
+  margin-left:80px;
+}
+

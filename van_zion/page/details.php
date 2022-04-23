@@ -245,7 +245,7 @@ function toggleCheck(e) {
             <div class="card-body" style="height:900px">
                 <div class="card-title">Title : <?= ucwords($row['title']) ?>
                     <div class="card-title">Original key : <?= strtoupper($row['chord']) ?>
-                        <div class="card-title bi bi-123">Hla Number : <?= $row['number'] ?>
+<!--                        <div class="card-title bi bi-123">Hla Number : --><?//= $row['number'] ?>
 
                             </br>
                             </br>
