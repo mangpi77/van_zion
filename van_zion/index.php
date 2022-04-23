@@ -17,7 +17,7 @@
 </head>
 
 <body class="bg-primary">
-
+<?php require_once 'components/menu.php';?>
     <div class="container">
         <div class="row mt-4">
             <div class="col-md-8 mx-auto rounded p-4" style="background-color:#ffffff">
