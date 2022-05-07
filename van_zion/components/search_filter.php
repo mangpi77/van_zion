@@ -3,7 +3,9 @@
 
   if (isset($_POST['query'])) {
     $inpText = $_POST['query'];
-    $sql = 'SELECT id, title, chord FROM song WHERE title LIKE :title';
+    $sql = '(SELECT id, title, chord FROM song WHERE title LIKE :title)
+    UNION (SELECT id, title, chord FROM hymn WHERE title LIKE :title)';
+    
     $stmt = $conn->prepare($sql);
     $stmt->execute(['title' => '%' . $inpText . '%']);
     $result = $stmt->fetchAll();
@@ -24,3 +26,4 @@
 
   }
 ?>
+

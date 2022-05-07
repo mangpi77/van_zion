@@ -1,0 +1,47 @@
+
+
+.navbar{
+    display:none;
+}
+
+.key{
+    display:none;
+}
+.card{
+    display:none;
+}
+.col-md-4{
+    display:none;
+}
+.showkey{
+    display:none;
+}
+
+span.c { 
+  display:none;
+}
+
+.transpose-keys {
+	display:none;
+}
+.transpose-keys a { 
+	display:none;
+}
+.transpose-keys .selected { 
+  display:none;
+}
+
+#myCheckbox{
+    display:none;
+}
+
+#pre{
+    border:none;
+    zoom: 80%;
+}
+#key{
+    display:none;
+}
+.footer{
+    display:none;
+}

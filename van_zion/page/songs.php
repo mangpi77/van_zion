@@ -1,3 +1,4 @@
+
 <?php
 require_once '../config.php';
 //$sql = 'SELECT id, title FROM song ORDER BY title ASC;';
@@ -84,12 +85,10 @@ $right_column2 = print_songs2($right);
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,22 +96,26 @@ $right_column2 = print_songs2($right);
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheet.css">
-    <link rel="stylesheet" href="../theme.css">
     <link rel="stylesheet" href="songs.css">
+    <link rel="stylesheet" href="../theme.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Montserrat:100,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i">
     <script src="bootstrap/scripts/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        a{
+            text-decoration:none;
+        }
+ 
+    </style>
 
 </head>
 
-<body class="bg-primary">
 
-    </div>
-    </div>
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="components/script.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -120,73 +123,61 @@ $right_column2 = print_songs2($right);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+<div class = "wrapper">    
+<div class="container">
+        <div class="row">
+            <?php include '../components/details_menu.php'?>
 
-    <div class="container mx-auto">
-        <div class="row text-left">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="../"><strong><embed src="../uploads/icons/logo_full_color.png"
-                            height="87px" width=150px"></strong></a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
-                        </li>
-                        <li class="nav-item">
-                        </li>
-                    </ul>
-                    <form action="details.php" method="post" class="">
-                        <div class="input-group textbox-rounded">
-                            <input type="text" name="search" id="search"
-                                class="form-control form-control-md textbox-rounded border-primary"
-                                placeholder="Search..." autocomplete="on" required>
-                            <div class="input-group-append">
-                                <input type="submit" name="submit" value="Search"
-                                    class="btn btn-primary textbox-rounded">
-                            </div>
-                        </div>
-                    </form>
-
-                    <form action="details.php" method="post" hidden>
+          <form action="details.php" method="post" hidden>
                         <input type="text" name="search" id="search2"
                             class="form-control form-control-lg rounded-0 border-primary width =250px;"
                             placeholder="Search..." autocomplete="off" required="">
                         <input type="submit" id='searchclick' name="submit" value="Search"
                             class="btn btn-primary rounded-right">
                     </form>
-                </div>
-            </nav>
-            <div class = "navcenter">
-            <button class="tablink" onclick="openPage('title', this)" id="defaultOpen">A THULU IN
-                HAWLNAK</button>
-            <button class="tablink" onclick="openPage('key', this)">A KEY IN HAWLNAK</button>
-            </div>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<script>
+const btn = document.getElementById('title');
+
+btn.addEventListener('click', function onClick() {
+  btn.style.backgroundColor = 'red';
+  btn.style.color = 'black';
+});
+
+    
+</script>
+             <div class ="tablink" onclick="openPage('title', this)" id="defaultOpen">TITLE IN HAWL</div>
+               
+             <div class ="tablink" onclick="openPage('key', this)">KEY IN HAWL</div>
             <div id="title" class="tabcontent">
-                <div class="background-color-1">
+                <div class="background">
 
                     <div class="column" >
-                        <div style="margin-left:80px">
                             <h4>(A - M)</h4>
                             <?php
                         echo
 
-                        "<div class='lineline'>".$left_column ."</div>"
+                       $left_column
                         ?>
 
                         </div>
                     </div>
                     <div class="column">
-                        <div style="margin-left:70px">
                             <h4>(N - Z)</h4>
                             <?php
                         echo
@@ -195,14 +186,13 @@ $right_column2 = print_songs2($right);
                         </div>
                     </div>
 
-                </div>
-            </div>
+
 
             <div id="key" class="tabcontent">
                 <div class="background-color-1">
 
                     <div class="column">
-                        <div style="margin-left:80px">
+                       
                             <?php
                         echo
                         $left_column2
@@ -212,7 +202,7 @@ $right_column2 = print_songs2($right);
 
                     </div>
                     <div class="column">
-                        <div style="margin-left:70px">
+                        
                             <?php
                         echo
                         $right_column2
@@ -220,13 +210,9 @@ $right_column2 = print_songs2($right);
                         </div>
                     </div>
 
-                </div>
-            </div>
-
         </div>
-        <div class="footer mt-1">
-            <?php require_once '../components/footer.php';?>
-        </div>
+            <?php require_once '../components/footer_main.php';?>
+        
 
 
     </div>

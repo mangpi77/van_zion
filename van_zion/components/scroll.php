@@ -1,3 +1,4 @@
+<!---
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,10 +33,10 @@
 <body>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">
-    <img src="../uploads/icons/up.png" width="25" height="25"/>
+    <img src="../van_zion/uploads/icons/up.png" width="25" height="25"/>
 </button>
 
-
+--!>
 <!--<div style="background-color:black;color:white;padding:30px">Scroll Down</div>-->
 <!--<div style="background-color:lightgrey;padding:30px 30px 2500px">This example demonstrates how to create a "scroll to top" button that becomes visible-->
 <!--    <strong>when the user starts to scroll the page</strong>.</div>-->
@@ -62,5 +63,3 @@
     }
 </script>
 
-</body>
-</html>

@@ -1,7 +1,19 @@
 /*! `Custom` Bootstrap 5 theme */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700);
-body {
-  color: var(--clr-gray);
+
+
+.wrapper{
+    background-color:#e3e3e3;
+}
+.wrapper1{
+    background-color:#e3e3e3;
+}
+
+
+.container{
+
+    background-color:white;
+    
 }
 
 .bodyText {
@@ -15,21 +27,13 @@ body {
   font-weight: 600;
 }
 
-.container {
-  overflow: hidden;
-  box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
-  text-align: left;
-  position: relative;
-}
-
 .footer {
   box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
-  background-color: black;
+  background-color:#000000;
   width: 100%;
-  margin-top: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 11%;
+  padding-top:1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
   
 }
 
@@ -44,22 +48,23 @@ body {
 
 .col-8 {
   padding: none;
-
   margin-left: none;
   margin-right: none;
+  background-color:white;
 }
 
 .col-md-4 {
   background-color: white;
   border-left: solid;
   border-color: #eeeeee;
-  margin-top: 20px;
+  margin-top:20px;
+
 }
 
 .row {
-  background-color: white;
   padding: 0;
-  margin: 0;
+  margin-top: 0;
+  background-color:white;
 }
 
 .btn {
@@ -70,7 +75,6 @@ body {
 }
 
 .navbar {
-  background-colr: rgb(121, 109, 109);
 }
 .textbox-rounded {
 }
@@ -83,11 +87,105 @@ table {
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid #f2f0f0;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #f5f5f5;
 }
+
+@media screen and (max-width: 800px) {
+  .col-md-4 {
+    border-top: solid;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-left:none;
+    border-color:gray;
+    
+  }
+  #pre{
+      	overflow: auto;
+  }
+  .card1{
+      overflow:auto;
+  }
+
+  .card-body1{
+      overflow:auto;
+  }
+  
+ .row{
+    background-color:white;
+    margin-left:-25px;
+    margin-right:-25px;
+    overflow: auto;
+}
+.col-md-8{
+    margin-left:-15px;
+    margin-right:-15px;
+}
+.wrapper{
+    background-color:white;
+    overflow: auto;
+} 
+.container{
+    background-color:white;
+    overflow: auto;
+}
+
+
+
+.social_logo {
+    float: left;
+    padding: 5px 0 5px 0;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  .btn {
+    z-index: 999;
+  }
+
+  .social_logo {
+    visibility: none;
+  }
+  #search {
+    visibility: none;
+  }
+
+.hot {
+  background-image: url("./uploads/icons/fire.png");
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 10px;
+  font-size: 18px;
+  width: auto;
+  margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 2px 5px 10px rgba(88, 89, 69, 0.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+
+}
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+    border:none;
+}
+ tr{
+     
+ }
+ th {
+     background-color:#083358;
+     color:white;
+ }
+ 
+                       

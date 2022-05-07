@@ -16,7 +16,7 @@ span.c {
 .transpose-keys {
 	margin: 10px 0;
 	overflow: auto;
-	font: normal 11px sans-serif;
+	font: normal 12px sans-serif;
 }
 .transpose-keys a { 
 	display: block;
@@ -28,7 +28,6 @@ span.c {
 	background: #eee;
 	text-decoration: none;
 	padding: .4em 0;
-	border: solid 1px transparent;
 	outline: none;
 }
 .transpose-keys a.selected { 

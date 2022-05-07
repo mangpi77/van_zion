@@ -3,10 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-        }
+       
 
         #myBtn {
             display: none;
@@ -32,7 +29,7 @@
 <body>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">
-    <img src="../van_zion/uploads/icons/up.png" width="25" height="25"/>
+    <img src="../uploads/icons/up.png" width="25" height="25"/>
 </button>
 
 

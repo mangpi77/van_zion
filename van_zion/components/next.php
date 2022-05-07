@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
 <!--         Next and Previous Page-->
 <style>
     a {
         text-decoration: none;
         display: inline-block;
-        padding: 8px 16px;
     }
 
     a:hover {
@@ -28,15 +19,22 @@
     .next {
         background-color: #083358;
         color: white;
+        padding: 8px 16px;
+        margin-left:5px;
+        margin-bottom:20px;
     }
 
     .round {
-        border-radius: 50%;
+        border-radius: 5%;
+    }
+    .next{
+        
+
     }
 </style>
 
 <?php
-$conn = mysqli_connect("localhost", "root", "root", "cbanaus_songbook");
+$conn = mysqli_connect("162.241.217.237", "cbanaus_user", "WH8M0~5AGIEP", "cbanaus_songbook");
 // Check connection
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
@@ -46,7 +44,7 @@ $id = 1;
 } else {
 $id = (int)$_GET['id'];
 }
-$recordsPerPage = 10;
+$recordsPerPage = 1000;
 $sql = "select count(*) as total FROM song";
 $result = $conn->query($sql);
 $data = $result->fetch_assoc();
@@ -58,18 +56,17 @@ $recordsPerPage = 1;
 $output = $id;
 if ($id == 1) {
 $output = $id + 1;
-echo '<a href="page/details.php?id=' . $output . '" class="next round">&#8250;</a>';
+echo '<a href="page/details.php?id=' . $output . '" class="next">&#8250;</a>';
 } elseif ($id >= 2 && $id <= (int)$data["total"] - 1) {
 $output = $id - 1;
 $output2 = $id + 1;
-echo '<a href="page/details.php?id=' . $output . '" class="previous round">&#8249;</a>';
-echo '<a href="page/details.php?id=' . $output2 . '" class="next round">&#8250;</a>';
+echo '<a href="page/details.php?id=' . $output . '" class="next">&#8249;</a>';
+echo '<a href="page/details.php?id=' . $output2 . '" class="next">&#8250;</a>';
 } elseif ($id == (int)$data["total"]) {
 $output = $id - 1;
-echo '<a href="page/details.php?id=' . $output . '" class="previous round">&#8249;</a>';
+echo '<a href="page/details.php?id=' . $output . '" class="next">&#8249;</a>';
 }
 
 ?>
 </body>
 </html>
-
